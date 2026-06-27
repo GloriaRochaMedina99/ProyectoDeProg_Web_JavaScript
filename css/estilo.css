@@ -1,0 +1,99 @@
+/* ==========================================
+   ESTILOS GENERALES Y BASE DE LA PÁGINA
+   ========================================== */
+
+/* body: Modifica todo el cuerpo o fondo general de la pantalla */
+body {
+    font-family: Arial, sans-serif; /* Cambia el tipo de letra a una más limpia y legible */
+    margin: 0;                      /* Elimina los márgenes externos que el navegador trae por defecto */
+    padding: 0;                     /* Elimina el espacio de relleno interno por defecto */
+    background-color: whitesmoke;   /* Pone un fondo gris clarito muy suave a toda la pantalla */
+    color: black;                   /* Hace que todo el texto general sea de color negro */
+}
+
+/* ==========================================
+   ESTRUCTURA PRINCIPAL (Header, Main, Section)
+   ========================================== */
+
+/* header: El bloque superior o encabezado donde va el título principal */
+header {
+    background-color: navy;     /* Pone el fondo del encabezado de color azul marino */
+    color: white;               /* Hace que el texto del título sea blanco para que contraste */
+    padding: 20px;              /* Le da espacio interno para que el título no quede pegado a los bordes */
+    text-align: center;         /* Centra el título en el medio de la pantalla */
+}
+
+/* main: El contenedor grande que envuelve a todo el contenido del centro */
+main {
+    width: 90%;                 /* Hace que el contenido ocupe el 90% del ancho de la pantalla */
+    margin: 20px auto;          /* Le da 20px de espacio arriba/abajo y lo centra perfectamente a los lados */
+}
+
+/* section: Cada uno de los bloques grandes (como la sección de departamentos o empleados) */
+section {
+    background-color: white;         /* El fondo de cada recuadro de sección será blanco */
+    border: 1px solid lightgray;     /* Le dibuja un borde fino de color gris claro a la sección */
+    padding: 20px;                   /* Deja un buen colchón de espacio adentro para que no se amontone el contenido */
+    margin-bottom: 20px;             /* Deja un espacio de 20px abajo para separarse de la siguiente sección */
+}
+
+/* ==========================================
+   FORMULARIOS Y CAMPOS DE ENTRADA (Inputs y Botones)
+   ========================================== */
+
+/* form: La zona donde se agrupan los cuadritos para escribir y los botones */
+form {
+    display: flex;       /* Activa el diseño flexible para alinear los elementos uno al lado del otro */
+    gap: 10px;           /* Deja una separación exacta de 10px entre cada campo y botón */
+    margin-bottom: 20px; /* Deja espacio abajo para no pegarse con lo que sigue */
+    flex-wrap: wrap;     /* Si la pantalla es chica (como un celular), los campos se acomodan abajo automáticamente */
+}
+
+/* input, select: Los campos donde el usuario escribe datos o despliega opciones */
+input, select {
+    padding: 8px;           /* Le da grosor y altura interna a las casillas para que sea cómodo escribir */
+    border: 1px solid gray; /* Le pone un borde gris definido a cada casilla */
+}
+
+/* button: Estilo base para TODOS los botones de la página */
+button {
+    padding: 8px 12px;       /* Espacio interno: 8px arriba/abajo y 12px a los lados */
+    border: 1px solid gray;  /* Borde gris para delimitar el botón */
+    background-color: white; /* Por defecto, el botón es de fondo blanco */
+    cursor: pointer;         /* Hace que el cursor del ratón se transforme en una "manito" al pasar por encima */
+}
+
+/* button:hover: El efecto visual que pasa ÚNICAMENTE cuando pones el cursor sobre un botón */
+button:hover {
+    background-color: lightgray; /* El botón cambia a fondo gris clarito para avisar que se puede hacer clic */
+}
+
+/* ==========================================
+   TARJETAS (Cards) Y BOTONES DE ACCIÓN
+   ========================================== */
+
+/* .card: Los recuadros individuales que muestran los datos de cada empleado o departamento */
+.card {
+    border: 1px solid gray;  /* Pone un borde gris oscuro alrededor de la tarjeta */
+    padding: 15px;           /* Margen interno para que el texto de la tarjeta respire */
+    margin-bottom: 10px;     /* Separa una tarjeta de la otra dejando un espacio abajo */
+    background-color: white; /* El fondo de la tarjeta individual es blanco */
+}
+
+/* .card button: Afecta SOLO a los botones que están guardados ADENTRO de una tarjeta */
+.card button {
+    margin-right: 5px;       /* Deja un espacio a la derecha de cada botón para que no se peguen entre sí */
+    margin-top: 5px;         /* Espacio arriba por si se acomodan en una nueva línea */
+}
+
+/* .btn-danger: Estilo especial para los botones de "Eliminar" o acciones de cuidado */
+.btn-danger {
+    background-color: tomato; /* Pone el botón de un color rojo/tomate llamativo */
+    color: white;             /* Hace que la palabra "Eliminar" se lea en blanco */
+}
+
+/* .btn-edit: Estilo especial para los botones de "Editar" o modificar */
+.btn-edit {
+    background-color: lightblue; /* Pone el botón de un color azul clarito */
+    color: black;                /* Hace que el texto se mantenga en color negro */
+}
