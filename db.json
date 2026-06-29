@@ -9,11 +9,6 @@
       "id": 2,
       "nombre": "Recursos Humanos",
       "responsable": "Lic. Ana Gómez"
-    },
-    {
-      "nombre": "ggggg",
-      "responsable": "rrrrrrr",
-      "id": 3
     }
   ],
   "empleados": [

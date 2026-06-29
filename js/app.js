@@ -1,23 +1,15 @@
-// =========================================================================
-// CONFIGURACIÓN INICIAL Y CAPTURA DE ELEMENTOS (Conexión HTML con JavaScript)
-// =========================================================================
-
-// URL base de la API Fake local para las peticiones de Axios
 const API_URL = "http://localhost:3000";
 
-// Contenedores del DOM donde se renderizarán las tarjetas (Cards)
 const contenedorDepartamentos = document.getElementById("contenedor-departamentos");
 const contenedorEmpleados = document.getElementById("contenedor-empleados");
 const contenedorAsistencias = document.getElementById("contenedor-asistencias");
 
-// Elementos del Formulario de Departamentos
 const formDepartamento = document.getElementById("form-departamento");
 const inputDepartamentoId = document.getElementById("departamento-id"); 
 const inputDepartamentoNombre = document.getElementById("departamento-nombre");
 const inputDepartamentoResponsable = document.getElementById("departamento-responsable");
 const btnCancelarDepartamento = document.getElementById("btn-cancelar-departamento");
 
-// Elementos del Formulario de Empleados
 const formEmpleado = document.getElementById("form-empleado");
 const inputEmpleadoId = document.getElementById("empleado-id");
 const inputEmpleadoNombre = document.getElementById("empleado-nombre");
@@ -27,33 +19,23 @@ const selectEmpleadoDepartamento = document.getElementById("empleado-departament
 const filtroDepartamento = document.getElementById("filtro-departamento");
 const btnCancelarEmpleado = document.getElementById("btn-cancelar-empleado");
 
-// Elementos del Formulario de Asistencias
 const formAsistencia = document.getElementById("form-asistencia");
 const selectAsistenciaEmpleado = document.getElementById("asistencia-empleado");
 const filtroEmpleadoAsistencia = document.getElementById("filtro-empleado-asistencia");
 
-
-// =========================================================================
-// ESCUCHADORES DE EVENTOS (Inicialización de la App)
-// =========================================================================
-
 document.addEventListener("DOMContentLoaded", iniciarApp);
 
 async function iniciarApp() {
-    // Eventos de Departamentos
     formDepartamento.addEventListener("submit", guardarDepartamento);
     btnCancelarDepartamento.addEventListener("click", cancelarEdicionDepartamento);
 
-    // Eventos de Empleados
     formEmpleado.addEventListener("submit", guardarEmpleado);
     btnCancelarEmpleado.addEventListener("click", cancelarEdicionEmpleado);
     filtroDepartamento.addEventListener("change", cargarEmpleados); 
 
-    // Eventos de Asistencias
     formAsistencia.addEventListener("submit", registrarAsistencia);
     filtroEmpleadoAsistencia.addEventListener("change", cargarAsistencias);
 
-    // Carga inicial de datos de la API
     await cargarDatos();
 }
 
@@ -64,11 +46,6 @@ async function cargarDatos() {
     await cargarSelectEmpleados();
     await cargarAsistencias();
 }
-
-
-// =========================================================================
-// CRUD 1: DEPARTAMENTOS
-// =========================================================================
 
 async function cargarDepartamentos() {
     try {
@@ -166,7 +143,6 @@ async function eliminarDepartamento(id) {
     if (!confirmar) return;
 
     try {
-        // Borrado en cascada exigido por la UTN
         const responseEmps = await axios.get(`${API_URL}/empleados?departamentoId=${id}`);
         const empleados = responseEmps.data;
 
@@ -184,11 +160,6 @@ async function eliminarDepartamento(id) {
         console.error("Error al eliminar departamento en cascada:", error);
     }
 }
-
-
-// =========================================================================
-// CRUD 2: EMPLEADOS
-// =========================================================================
 
 async function cargarEmpleados() {
     try {
@@ -285,7 +256,6 @@ async function eliminarEmpleado(id) {
     if (!confirmar) return;
 
     try {
-        // Eliminar asistencias vinculadas antes de borrar al empleado
         const responseAsis = await axios.get(`${API_URL}/asistencias?empleadoId=${id}`);
         const asistencias = responseAsis.data;
         for (const asis of asistencias) {
@@ -297,11 +267,6 @@ async function eliminarEmpleado(id) {
         console.error("Error al eliminar empleado:", error);
     }
 }
-
-
-// =========================================================================
-// CRUD 3: ASISTENCIAS
-// =========================================================================
 
 async function cargarSelectEmpleados() {
     try {
@@ -331,7 +296,7 @@ async function registrarAsistencia(event) {
 
     const nuevaAsistencia = {
         empleadoId: empleadoId,
-        fecha: new Date().toLocaleDateString(), // Fecha automática pedida por el TP
+        fecha: new Date().toLocaleDateString(),
         estado: "Presente"
     };
 
@@ -370,7 +335,6 @@ function renderizarAsistencias(asistencias, empleados) {
         return;
     }
 
-    // Ordenar del más reciente al más antiguo como pide la UTN
     asistencias.reverse();
 
     asistencias.forEach(function(asis) {
