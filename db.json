@@ -32,13 +32,37 @@
       "id": 1,
       "empleadoId": 1,
       "fecha": "2025-06-15",
-      "estado": "Presente"
+      "estado": "Ausente"
+    },
+    {
+      "empleadoId": 1,
+      "fecha": "29/6/2026",
+      "estado": "Tardanza",
+      "id": 2
     },
     {
       "empleadoId": 1,
       "fecha": "29/6/2026",
       "estado": "Presente",
-      "id": 2
+      "id": 3
+    },
+    {
+      "empleadoId": 1,
+      "fecha": "29/6/2026",
+      "estado": "Presente",
+      "id": 4
+    },
+    {
+      "empleadoId": 1,
+      "fecha": "29/6/2026",
+      "estado": "Presente",
+      "id": 5
+    },
+    {
+      "empleadoId": 1,
+      "fecha": "29/6/2026",
+      "estado": "Presente",
+      "id": 6
     }
   ]
 }
